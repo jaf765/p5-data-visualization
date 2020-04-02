@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  </head>
+
+<style>
+body {
+  background-image: url("https://i.pinimg.com/originals/54/14/c7/5414c70e4a396d6d96f0a9d0114723ab.jpg");
+}
+
+.text {
+  margin-left: 160px;
+  margin-top: 10px;
+  margin-right: 200px;
+  line-height: 20px;
+  font-size: 30px;
+  font-family: 'Patrick Hand',cursive;
+
+}
+
+
+.title {
+  font-size: 70px;
+  font-family: 'Patrick Hand',cursive;
+  margin-left: 160px;
+  margin-top: 70px;
+}
+
+.another a{
+  background-color: #2B2D2F;
+color: white;
+padding: 14px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin-top: -30px;
+margin-bottom: 30px;
+}
+
+.another a:hover{
+  background-color: #45a049;
+  padding: 14px 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  line-height: 40px;
+  font-style: 30px;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+
+a:hover{
+  padding: 10px 10px;
+  background-color: #45a049;
+}
+
+table {
+  border-collapse: collapse;
+  width: 1500px;
+  background-color: white;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#45a049;}
+
+/* .cell {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    display: block;
+    padding: 8px;
+    width: 100%;
+} */
+
+.cell-overflow {
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+</style>
+
+
+
+
+
+  <body>
+
+    <h1 class="title">My Entries</h1>
+
+  <div class="text">
+    <table>
+
+      <tr>
+        <th><a href="/display?sort=timestamp" style="font-size:25px">DATE</a></th>
+        <th><a href="/display?sort=mood"style="font-size:25px">MOOD</a></th>
+        <th><a href="/display?sort=entry5"style="font-size:25px">ENTRY PREVIEW</a></th>
+      </tr>
+
+      <% for (var i = 0; i < data.length; i++) { %>
+
+       <div class="cell">
+        <tr class="cell-overflow">
+          <td><a href="/individual?id=<%=data[i]._id%>"><%=data[i].timestamp%></a></td>
+          <td><%=data[i].mood%></td>
+          <td class="ellipsis"><%=data[i].entry4%></td>
+        </tr>
+      </div>
+      <% } %>
+
+      <div class="another"><a href="/diaryform.html">Write Another Entry</a></div>
+   </table>
+ </div>
+
+  </body>
+</html>

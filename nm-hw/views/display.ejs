@@ -1,0 +1,33 @@
+<%# THIS MUST BE SAVED IN A VIEWS FILES IN YOUR FOLDER %>
+
+<html>
+
+  <head>
+    <script src="p5.js"></script>
+  </head>
+
+  <body>
+    <table>
+
+      <tr>
+        <th><a href="/display?sort=timestamp">Date</a></th>
+        <th><a href="/display?sort=mood">Mood</a></th>
+        <th><a href="/display?sort=entry">entry</a></th>
+      </tr>
+
+      <% for (var i = 0; i< data.length; i++) { %>
+
+        <tr>
+          <td><%=data[i].date%></td>
+          <td><%=data[i].mood%></td>
+          <td><%=data[i].entry%></td>
+        </tr>
+
+      <%  }  %>
+
+      <a href="diaryform.html">
+      <script src="sketch.js"></script>
+
+  </body>
+
+</html>
