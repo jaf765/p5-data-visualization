@@ -12,7 +12,7 @@ function loadData() {
 
 fetch('/data') 
 .then((respond) => {
-  return response.json();
+  return respond.json();
 })
 .then((incoming) => {
   console.log(incoming);
@@ -71,8 +71,9 @@ function draw() {
   textSize(20);
   text('bad', 280, 180);
   
+  ellipseMode(CORNER);
   for(let i = 0; i < formattedData.length; i++) {
-    rect(i*100,10,howMany * formattedData[i].touches, howMany*formattedData[i].touches)
+    ellipse(i*140,120,howMany * formattedData[i].touches, howMany*formattedData[i].touches)
   }
   fill(200,10,20);
 
